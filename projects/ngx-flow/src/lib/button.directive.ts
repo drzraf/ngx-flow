@@ -1,4 +1,5 @@
 import { Directive, ElementRef, inject, Input } from '@angular/core';
+import type { FlowInstance } from './flow-js';
 
 @Directive({
   selector: '[flowButton]'
@@ -14,16 +15,16 @@ export class FlowButton {
     this.setup();
   }
 
-  protected _attributes?: object;
+  protected _attributes?: Record<string, string>;
   @Input()
-  set flowAttributes(attributes: object) {
+  set flowAttributes(attributes: Record<string, string>) {
     this._attributes = attributes;
     this.setup();
   }
 
-  protected _flow?: flowjs.Flow;
+  protected _flow?: FlowInstance;
   @Input()
-  set flow(flow: flowjs.Flow) {
+  set flow(flow: FlowInstance) {
     this._flow = flow;
     this.setup();
   }
