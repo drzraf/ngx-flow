@@ -1,6 +1,6 @@
 {
-  "name": "ngx-flow",
-  "version": "0.0.0",
+  "name": "@flowjs/ngx-flow",
+  "version": "21.0.0",
   "author": {
     "name": "Martin Nuc",
     "email": "martin@nuc.cz"
@@ -20,20 +20,8 @@
     "test:ci": "npx ng test ngx-flow --watch=false --browsers ChromeHeadless --code-coverage",
     "server": "node server/app.js"
   },
-  "private": true,
   "dependencies": {
-    "@angular/animations": "^21.0.0",
-    "@angular/common": "^21.0.0",
-    "@angular/compiler": "^21.0.0",
-    "@angular/core": "^21.0.0",
-    "@angular/forms": "^21.0.0",
-    "@angular/platform-browser": "^21.0.0",
-    "@angular/platform-browser-dynamic": "^21.0.0",
-    "@angular/router": "^21.0.0",
-    "@flowjs/flow.js": "^2.14.1",
-    "rxjs": "^7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.16.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "^21.0.0",
@@ -52,6 +40,37 @@
     "karma-spec-reporter": "^0.0.36",
     "ng-packagr": "^21.0.0",
     "typescript": ">=5.9.0 <6.0.0",
-    "typescript-eslint": "8.59.4"
+    "typescript-eslint": "8.59.4",
+    "@angular/animations": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "@angular/router": "^21.0.0",
+    "@flowjs/flow.js": "https://github.com/drzraf/flow.js.git#v3-next",
+    "rxjs": "^7.8.0",
+    "zone.js": "~0.16.0"
+  },
+  "main": "dist/ngx-flow/fesm2022/flowjs-ngx-flow.mjs",
+  "module": "dist/ngx-flow/fesm2022/flowjs-ngx-flow.mjs",
+  "types": "dist/ngx-flow/types/flowjs-ngx-flow.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/ngx-flow/types/flowjs-ngx-flow.d.ts",
+      "default": "./dist/ngx-flow/fesm2022/flowjs-ngx-flow.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/ngx-flow"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@flowjs/flow.js": "^3.0.0-alpha.1",
+    "rxjs": "^7.8.0"
   }
 }

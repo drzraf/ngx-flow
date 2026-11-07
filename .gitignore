@@ -3,7 +3,9 @@ server/tmp/*
 !.gitkeep
 
 # compiled output
-/dist
+/dist/*
+!/dist/ngx-flow/
+!/dist/ngx-flow/**
 /tmp
 /out-tsc
 # Only exists if Bazel was run
